@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title> <%=meta.mtitle %> </title>
+<meta name="description" content="<%=meta.mdesc %>">
+<meta name="keywords" content="<%=meta.mkeys %>">
+<meta name="author" content="<%=meta.mauth %>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/logos/favicon.png" type="image/x-icon"/>
+<link rel="shortcut icon" href="/logos/favicon.png" type="image/x-icon"/>
+<!-- Place favicon.ico in the root directory -->
+<link rel="stylesheet" href="/css/vendor.css">
+<!-- Theme initialization -->
+<script>
+    var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
+        {};
+    var themeName = themeSettings.themeName || '';
+    if (themeName)
+    {
+        document.write('<link rel="stylesheet" id="theme-style" href="/css/app-' + themeName + '.css">');
+    }
+    else
+    {
+        document.write('<link rel="stylesheet" id="theme-style" href="/css/app.css">');
+    }
+</script>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <!--Get footer.js done-->
+    <% include partials/head.ejs %>
+</head>
+
+<body>
+<div class="main-wrapper">
+    <div class="app header-fixed footer-fixed sidebar-fixed" id="app">
+        <header class="header">
+            <!--Header class-->
+            <% include partials/header.ejs %>
+        </header>
+
+        <aside class="sidebar">
+            <!--Side bar-->
+            <% include partials/nav.bar.ejs %>
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        <div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+        <div class="mobile-menu-handle"></div>
+
+        <article class="content dashboard-page">
+            <!--pour your content here-->
+
+            <section class="section">
+                <div class="row sameheight-container">
+                    <div class="col-md-6">
+                        <div class="card card-block sameheight-item" style="height: 307px;">
+                            <div class="title-block">
+                                <h3 class="title">Basic Info <%= updated.basic %></h3>
+                            </div>
+                            <form role="form" method="post">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Account Name</label>
+                                    <input name="name" type="text" class="form-control" id="exampleInputEmail1"
+                                           placeholder="Account Name" value="<%= user.name %>"></div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Phone</label>
+                                    <input name="phone" type="text" class="form-control" id="exampleInputPassword1"
+                                           placeholder="Phone No." value="<%= user.phone %>"></div>
+                                <div class="form-group">
+                                    <input type="hidden" name="cmd" value="1"/>
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-block sameheight-item" style="height: 307px;">
+                            <div class="title-block">
+                                <h3 class="title"> Address Info <%= updated.address %></h3>
+                            </div>
+                            <form role="form" method="post">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Direct Address</label>
+                                    <input name="address" type="text" class="form-control" placeholder="Address"
+                                           value="<%= user.address %>"></div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Country State</label>
+                                    <select name="state" class="form-control">
+                                        <option><%= user.state %></option>
+                                        <% include ./partials/states.options.ejs %>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="hidden" name="cmd" value="2"/>
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="row sameheight-container">
+                    <div class="col-md-6">
+                        <div class="card card-block sameheight-item" style="height: 307px;">
+                            <div class="title-block">
+                                <h3 class="title">Misc Info </h3>
+                            </div>
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input disabled="disabled" type="email" class="form-control"
+                                           placeholder="Enter email" value="<%= user.email %>"></div>
+                                <div class="form-group">
+                                    <label>Verify Account (ID Crad's)</label><br>
+                                    <input style="display: none;" type="file" id="picInp" name="image"/>
+                                    <a onclick="uploadImg()" class="btn btn-primary">Verify</a>
+                                </div>
+                            </form>
+                        </div>
+                        <script>
+                            //image uploader
+                            function uploadImg() {
+                                $('#picInp').trigger('click');
+                                $('#picInp').change(function (file) {
+                                    //file selected
+
+                                });
+                            }
+                        </script>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-block sameheight-item" style="height: 407px;">
+                            <div class="title-block">
+                                <h3 class="title">Change Password <%= updated.pass %></h3>
+                            </div>
+                            <form role="form" method="post">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Old Password</label>
+                                    <input name="op" type="text" class="form-control" placeholder="Old Password"
+                                           value=""></div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Create Password</label>
+                                    <input name="p1" type="password" class="form-control"
+                                           placeholder="New Password"><br>
+                                    <input name="p2" type="password" class="form-control"
+                                           placeholder="Retype New Password"></div>
+                                <div class="form-group">
+                                    <input type="hidden" name="cmd" value="3"/>
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </article>
+
+        <footer class="footer">
+            <!--Partial footer-->
+            <% include ./partials/footer.ejs %>
+        </footer>
+
+    </div>
+</div>
+<!-- Reference block for JS -->
+<div class="ref" id="ref">
+    <div class="color-primary"></div>
+    <div class="chart">
+        <div class="color-primary"></div>
+        <div class="color-secondary"></div>
+    </div>
+</div>
+<!--Get footer.js done-->
+<% include partials/foot.ejs %>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <!--Get footer.js done-->
+    <% include ./partials/head.ejs %>
+</head>
+
+<body>
+<div class="main-wrapper">
+    <div class="app header-fixed footer-fixed sidebar-fixed" id="app">
+        <header class="header">
+            <!--Header class-->
+            <% include ./partials/header.ejs %>
+        </header>
+
+        <aside class="sidebar">
+            <!--Side bar-->
+            <% include ./partials/nav.bar.ejs %>
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        <div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+        <div class="mobile-menu-handle"></div>
+
+        <article class="content dashboard-page">
+            <!--pour your content here-->
+            <section class="section">
+                <div class="row sameheight-container">
+                    <div class="col col-12 col-sm-12 col-md-6 col-xl-5 stats-col">
+                        <div class="card sameheight-item stats" data-exclude="xs">
+                            <div class="card-block">
+                                <div class="title-block">
+                                    <h4 class="title"> Account Summary </h4>
+                                    <p class="title-description"> Website for most purchase
+                                        <a href="#">
+                                            Fresh farm product </a>
+                                    </p>
+                                </div>
+                                <div class="row row-sm stats-container">
+                                    <div class="col-12 col-sm-6 stat-col">
+                                        <div class="stat-icon">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                        <div class="stat">
+                                            <div class="value"><%= user.name %></div>
+                                            <div class="name"> Account Owner</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 stat-col">
+                                        <div class="stat-icon">
+                                            <i class="fa fa-phone"></i>
+                                        </div>
+                                        <div class="stat">
+                                            <div class="value"><%= user.phone %></div>
+                                            <div class="name"> Phone No.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row-sm stats-container mt-4">
+                                    <div class="col-12 col-sm-6 stat-col">
+                                        <div class="stat-icon">
+                                            <i class="fa fa-key"></i>
+                                        </div>
+                                        <div class="stat">
+                                            <div class="value"><%= user.acc_num %></div>
+                                            <div class="name"> Account No.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 stat-col">
+                                        <div class="stat-icon">
+                                            <i class="fa fa-money"></i>
+                                        </div>
+                                        <div class="stat">
+                                            <div class="value">&#8358; <%= user.balance %></div>
+                                            <div class="name"> Balance</div>
+                                            <button rel="modal:open" href="" class="btn btn-danger rounded text-white">
+                                                <i class="fa fa-credit-card"></i> Fund Wallet
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-12 col-sm-12 col-md-6 col-xl-7 history-col">
+                        <div class="card sameheight-item" data-exclude="xs" id="dashboard-history">
+                            <div class="card-header card-header-sm bordered">
+                                <div class="header-block">
+                                    <h3 class="title">History</h3>
+                                </div>
+                            </div>
+                            <div class="card-block">
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active fade show" id="visits">
+                                        <p class="title-description"> Number of unique history last 7 days </p>
+                                        <div id="dashboard-visits-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--User purchase listing-->
+            <section class="section">
+                <div class="row sameheight-container">
+                    <div class="col col-12 col-sm-12 col-md-12 col-xl-12 stats-col">
+                        <div class="card sameheight-item stats" data-exclude="xs">
+                            <div class="card-block">
+                                <div class="title-block">
+                                    <h4 class="title"> Our Services </h4>
+                                    <p class="title-description"> Credit, Share credit, Buy Voucher</p>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xl-4">
+                                        <div class="card">
+                                            <div style="background-color: whitesmoke" class="card-header">
+                                                <div class="header-block">
+                                                    <p class="title"> Default card </p>
+                                                </div>
+                                            </div>
+                                            <div class="card-block">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                                                    tincidunt est vitae ultrices accumsan. Aliquam ornare lacus
+                                                    adipiscing, posuere lectus et, fringilla augue.</p>
+                                            </div>
+                                            <p class="card-footer">
+                                                <a class="btn btn-primary" href="#">
+                                                    Gift Card
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- /.col-xl-4 -->
+                                    <div class="col-xl-4">
+                                        <div class="card">
+                                            <div style="background-color: whitesmoke" class="card-header">
+                                                <div class="header-block">
+                                                    <p class="title"> Primary card </p>
+                                                </div>
+                                            </div>
+                                            <div class="card-block">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                                                    tincidunt est vitae ultrices accumsan. Aliquam ornare lacus
+                                                    adipiscing, posuere lectus et, fringilla augue.</p>
+                                            </div>
+                                            <p class="card-footer">
+                                                <a class="btn btn-warning" href="#">
+                                                    Share Credit
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- /.col-xl-4 -->
+                                    <div class="col-xl-4">
+                                        <div class="card">
+                                            <div style="background-color: whitesmoke" class="card-header">
+                                                <div class="header-block">
+                                                    <p class="title"> Success card </p>
+                                                </div>
+                                            </div>
+                                            <div class="card-block">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                                                    tincidunt est vitae ultrices accumsan. Aliquam ornare lacus
+                                                    adipiscing, posuere lectus et, fringilla augue.</p>
+                                            </div>
+                                            <p class="card-footer">
+                                                <a class="btn btn-primary" href="#">
+                                                    Buy Voucher
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- /.col-xl-4 -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+
+        <footer class="footer">
+            <!--Partial footer-->
+            <% include ./partials/footer.ejs %>
+        </footer>
+
+    </div>
+</div>
+<!-- Reference block for JS -->
+<div class="ref" id="ref">
+    <div class="color-primary"></div>
+    <div class="chart">
+        <div class="color-primary"></div>
+        <div class="color-secondary"></div>
+    </div>
+</div>
+
+<!--script data-->
+<script>
+    var dataGraph = [
+        {x: '2019-09-01', y: 70},
+    ];
+</script>
+<!--Get footer.js done-->
+<% include ./partials/foot.ejs %>
+</body>
+</html>

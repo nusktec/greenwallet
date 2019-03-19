@@ -1,0 +1,133 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <!--header includes here-->
+    <% include ./partials/head.ejs %>
+</head>
+<body>
+<div class="auth">
+    <div class="auth-container">
+        <div class="card">
+            <header class="auth-header">
+                <img class="m-3" width="180" src="/logos/logo.png"/>
+            </header>
+            <div class="auth-content">
+                <p class="text-center color-primary"><%-info.message %></p>
+                <form id="signup-form" action="" method="post" novalidate="">
+                    <div class="form-group">
+                        <label for="firstname">Name</label>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control underlined" name="firstname" id="firstname"
+                                       placeholder="Enter firstname" required=""></div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control underlined" name="lastname" id="lastname"
+                                       placeholder="Enter lastname" required=""></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control underlined" name="email" id="email"
+                               placeholder="Enter email address" required=""></div>
+
+                    <div class="form-group">
+                        <label for="password">State &amp; Address</label>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <select type="text" class="form-control underlined" name="state" id="state" required="">
+                                    <option value="" selected="selected">- Select -</option>
+                                    <option value="Abuja FCT">Abuja FCT</option>
+                                    <option value="Abia">Abia</option>
+                                    <option value="Adamawa">Adamawa</option>
+                                    <option value="Akwa Ibom">Akwa Ibom</option>
+                                    <option value="Anambra">Anambra</option>
+                                    <option value="Bauchi">Bauchi</option>
+                                    <option value="Bayelsa">Bayelsa</option>
+                                    <option value="Benue">Benue</option>
+                                    <option value="Borno">Borno</option>
+                                    <option value="Cross River">Cross River</option>
+                                    <option value="Delta">Delta</option>
+                                    <option value="Ebonyi">Ebonyi</option>
+                                    <option value="Edo">Edo</option>
+                                    <option value="Ekiti">Ekiti</option>
+                                    <option value="Enugu">Enugu</option>
+                                    <option value="Gombe">Gombe</option>
+                                    <option value="Imo">Imo</option>
+                                    <option value="Jigawa">Jigawa</option>
+                                    <option value="Kaduna">Kaduna</option>
+                                    <option value="Kano">Kano</option>
+                                    <option value="Katsina">Katsina</option>
+                                    <option value="Kebbi">Kebbi</option>
+                                    <option value="Kogi">Kogi</option>
+                                    <option value="Kwara">Kwara</option>
+                                    <option value="Lagos">Lagos</option>
+                                    <option value="Nassarawa">Nassarawa</option>
+                                    <option value="Niger">Niger</option>
+                                    <option value="Ogun">Ogun</option>
+                                    <option value="Ondo">Ondo</option>
+                                    <option value="Osun">Osun</option>
+                                    <option value="Oyo">Oyo</option>
+                                    <option value="Plateau">Plateau</option>
+                                    <option value="Rivers">Rivers</option>
+                                    <option value="Sokoto">Sokoto</option>
+                                    <option value="Taraba">Taraba</option>
+                                    <option value="Yobe">Yobe</option>
+                                    <option value="Zamfara">Zamfara</option>
+                                    <option value="Outside Nigeria">Outside Nigeria</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control underlined" name="address"
+                                       id="address" placeholder="Address" required=""></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="email">Phone No.</label>
+                            <input type="text" class="form-control underlined" name="phone" id="phone"
+                                   placeholder="Enter phone no." required=""></div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control underlined" name="password" id="password"
+                                           placeholder="Enter password" required=""></div>
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control underlined" name="retype_password"
+                                           id="retype_password" placeholder="Re-type password" required=""></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="agree">
+                                <input class="checkbox" name="agree" id="agree" type="checkbox" required="">
+                                <span>Agree the terms and
+                                        <a href="#">policy</a>
+                                    </span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-block btn-primary">Sign Up</button>
+                        </div>
+                        <div class="form-group">
+                            <p class="text-muted text-center">Already have an account?
+                                <a data-turbolinks-action="replace" href="/login">Login!</a>
+                            </p>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Reference block for JS -->
+<div class="ref" id="ref">
+    <div class="color-primary"></div>
+    <div class="chart">
+        <div class="color-primary"></div>
+        <div class="color-secondary"></div>
+    </div>
+</div>
+<!--footerincludes here-->
+<% include ./partials/foot.ejs %>
+</body>
+</html>

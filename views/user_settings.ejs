@@ -1,0 +1,106 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <!--Get footer.js done-->
+    <% include ./partials/head.ejs %>
+</head>
+
+<body>
+<div class="main-wrapper">
+    <div class="app header-fixed footer-fixed sidebar-fixed" id="app">
+        <header class="header">
+            <!--Header class-->
+            <% include ./partials/header.ejs %>
+        </header>
+
+        <aside class="sidebar">
+            <!--Side bar-->
+            <% include ./partials/nav.bar.ejs %>
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        <div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+        <div class="mobile-menu-handle"></div>
+
+        <article class="content dashboard-page">
+            <!--pour your content here-->
+            <section class="section">
+                <div class="row sameheight-container">
+                    <div class="col-md-6">
+                        <div class="card card-block">
+                            <div class="title-block">
+                                <h3 class="title"> General Settings </h3>
+                            </div>
+                            <form action="" method="post" role="form">
+                                <div class="form-group">
+                                    <label class="control-label">Notifications</label>
+                                    <div>
+                                        <label>
+                                            <input value="1" name="semail"
+                                                    <% if(user.set_email === 1){ %>
+                                                    <%= "checked='check'" %>
+                                                    <% } %>
+                                                    class="checkbox" type="checkbox">
+                                            <span>Allow email notifications</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label>
+                                            <input value="1" name="ssms"
+                                                    <% if(user.set_sms === 1){ %>
+                                                    <%= "checked='check'" %>
+                                                    <% } %>
+                                                    class="checkbox" type="checkbox">
+                                            <span>Allow SMS notifications</span>
+                                            <small>(Charges may apply)</small>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label">Account Settings</label>
+                                    <div>
+                                        <label>
+                                            <input value="1"  name="sfreez"
+                                                    <% if(user.set_freez === 1){ %>
+                                                    <%= "checked='check'" %>
+                                                    <% } %>
+                                                    class="checkbox rounded" type="checkbox">
+                                            <span>Freeze Account Operations</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <% if(typeof data != 'undefined'){ %>
+                                    <label class="control-label">Settings saved !</label>
+                                    <br/>
+                                    <% } %>
+                                    <button class="btn btn-danger" type="submit">Apply Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+
+        <footer class="footer">
+            <!--Partial footer-->
+            <% include ./partials/footer.ejs %>
+        </footer>
+
+    </div>
+</div>
+<!-- Reference block for JS -->
+<div class="ref" id="ref">
+    <div class="color-primary"></div>
+    <div class="chart">
+        <div class="color-primary"></div>
+        <div class="color-secondary"></div>
+    </div>
+</div>
+<!--Get footer.js done-->
+<% include ./partials/foot.ejs %>
+</body>
+</html>
